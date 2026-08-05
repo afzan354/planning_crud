@@ -126,7 +126,8 @@ INSERT INTO users (nama, username, password) VALUES ('$nama', '$username', '$pas
 
 ```sql
 -- Cari user berdasarkan username
-SELECT * FROM users WHERE username = '$username';
+SELECT * FROM user_contoh WHERE username='$username' 
+    AND password='$password
 ```
 
 > **Tips:** Gunakan `session_start()` di bagian atas file, lalu simpan `$_SESSION['id_user']` dan `$_SESSION['nama']`.
