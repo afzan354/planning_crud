@@ -145,12 +145,13 @@ SELECT * FROM user_contoh WHERE username='$username'
 4. Jalankan query untuk ambil semua quotes
 
 **Query SQL yang dibutuhkan:**
-
+`$id = $_SESSION['id_user'];`
 ```sql
 -- Ambil semua quotes beserta nama pemiliknya
-SELECT quotes.id, quotes.isi_quotes, users.nama 
-FROM quotes 
-JOIN users ON quotes.id_user = users.id;
+SELECT quotes.id, quotes.isi_quotes, users.nama
+        FROM quotes
+        JOIN users ON quotes.id_user = users.id
+        WHERE quotes.id_user = '$id' ;
 ```
 
 **Yang perlu diubah di tabel HTML `dashboard.php`:**
